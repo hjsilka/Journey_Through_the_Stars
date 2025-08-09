@@ -12,3 +12,7 @@ Add
 Mini-games ideas:
 Home planet: Take care of the rose
 Businessman: Count the stars
+geographer: draws you random picture
+
+More ideas:
+-put infos about the people in a kind of letter, written by the prince

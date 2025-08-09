@@ -3,6 +3,7 @@ import math
 import sys
 from button import Button
 from constants import screen, SCREEN_WIDTH
+from universe import universe
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -44,6 +45,7 @@ def main_menu():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if PLAY_BUTTON.rect.collidepoint(event.pos):
                         print("pressed")
+                        universe()
                     if QUIT_BUTTON.rect.collidepoint(event.pos):
                         pygame.quit()
                         sys.exit()
