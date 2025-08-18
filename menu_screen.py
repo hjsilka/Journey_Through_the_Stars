@@ -6,6 +6,10 @@ from constants import screen, SCREEN_WIDTH, clock, FPS
 from universe import universe
 
 pygame.init()
+pygame.mixer.init()
+
+pygame.mixer.music.load('media/Hans Zimmer, Richard Harvey - Preparation.mp3')
+pygame.mixer.music.play(-1)
 
 font = pygame.font.Font('fonts/moonstar.ttf', 30)
 
