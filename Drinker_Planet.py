@@ -1,0 +1,27 @@
+import pygame
+from planet_class import PlanetScreen
+from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT
+
+class DrinkerPlanet(PlanetScreen):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load('media/img_2384.png')
+        self.image = pygame.transform.scale(self.image, (250, 250))
+        self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
+        self.description = (
+            "The third planet I visited was inhabited by a drinker\n"
+            "and plunged me into great melancholy.\n"
+            "The drinker was drinking to forget is what he told me.\n"
+            "He was drinking to forget that he was ashamed of drinking.\n"
+        )
+# picture and text
+    def draw(self):
+        screen.fill(BLACK)
+        screen.blit(self.image, (100, SCREEN_HEIGHT // 2 - self.image.get_height()// 2))
+        self.draw_multiline_text(self.description, SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, line_height=25)
+# split into lines
+    def draw_multiline_text(self, text, x, y, line_height=30):
+        lines = text.split('\n')
+        for i, line in enumerate(lines):
+            txt_surface = self.font.render(line, True, WHITE)
+            screen.blit(txt_surface, (x, y + i * line_height))

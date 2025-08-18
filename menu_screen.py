@@ -6,6 +6,7 @@ from constants import screen, SCREEN_WIDTH, clock, FPS
 from universe import universe
 
 pygame.init()
+
 font = pygame.font.Font('fonts/moonstar.ttf', 30)
 
 def main_menu():

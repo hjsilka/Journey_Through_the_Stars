@@ -2,6 +2,7 @@ import pygame
 import sys
 from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
 from King_Planet import KingPlanet
+from Drinker_Planet import DrinkerPlanet
 
 def universe():
 
@@ -21,7 +22,8 @@ def universe():
     }
 
     PLANET_SCREENS = {
-        "King's Planet": KingPlanet
+        "King's Planet": KingPlanet,
+        "Drunkard's Planet": DrinkerPlanet
     }
 
     # Little Prince (replace with image)

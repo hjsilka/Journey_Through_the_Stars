@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9561de7-ee98-4875-a38f-197fd0ae37f0" name="Changes" comment="updated documentation">
+    <list default="true" id="b9561de7-ee98-4875-a38f-197fd0ae37f0" name="Changes" comment="drinker planet py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/King_Planet.py" beforeDir="false" afterPath="$PROJECT_DIR$/King_Planet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Drinker_Planet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Drinker_Planet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu_screen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/universe.py" beforeDir="false" afterPath="$PROJECT_DIR$/universe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,28 +45,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.King_Planet.executor&quot;: &quot;Run&quot;,
-    &quot;Python.button.executor&quot;: &quot;Run&quot;,
-    &quot;Python.menu_screen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.planet class.executor&quot;: &quot;Run&quot;,
-    &quot;Python.rose_mini_game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.title.executor&quot;: &quot;Run&quot;,
-    &quot;Python.universe.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ilka/PycharmProjects/LittlePrince/fonts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.King_Planet.executor": "Run",
+    "Python.button.executor": "Run",
+    "Python.menu_screen.executor": "Run",
+    "Python.planet class.executor": "Run",
+    "Python.planet_class.executor": "Run",
+    "Python.rose_mini_game.executor": "Run",
+    "Python.title.executor": "Run",
+    "Python.universe.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/ilka/PycharmProjects/LittlePrince/fonts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/fonts" />
@@ -101,7 +103,7 @@
       <workItem from="1753907348705" duration="6629000" />
       <workItem from="1754746781191" duration="4720000" />
       <workItem from="1754766750282" duration="387000" />
-      <workItem from="1755510666957" duration="8990000" />
+      <workItem from="1755510666957" duration="10111000" />
     </task>
     <task id="LOCAL-00001" summary="menu screen background">
       <option name="closed" value="true" />
@@ -159,7 +161,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755521907648</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix text king planet">
+      <option name="closed" value="true" />
+      <created>1755523909487</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755523909487</updated>
+    </task>
+    <task id="LOCAL-00009" summary="drinker planet py">
+      <option name="closed" value="true" />
+      <created>1755524400596</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1755524400596</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +201,9 @@
     <MESSAGE value="universe" />
     <MESSAGE value="King Planet" />
     <MESSAGE value="updated documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated documentation" />
+    <MESSAGE value="fix text king planet" />
+    <MESSAGE value="drinker planet py" />
+    <option name="LAST_COMMIT_MESSAGE" value="drinker planet py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LittlePrince$King_Planet.coverage" NAME="King_Planet Coverage Results" MODIFIED="1755520410554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -191,7 +211,7 @@
     <SUITE FILE_PATH="coverage/LittlePrince$rose_mini_game.coverage" NAME="rose_mini_game Coverage Results" MODIFIED="1754747391797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LittlePrince$button.coverage" NAME="button Coverage Results" MODIFIED="1753897830203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LittlePrince$title.coverage" NAME="title Coverage Results" MODIFIED="1753870770592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LittlePrince$planet_class.coverage" NAME="planet class Coverage Results" MODIFIED="1755514354090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LittlePrince$menu_screen.coverage" NAME="menu_screen Coverage Results" MODIFIED="1755523852959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LittlePrince$planet_class.coverage" NAME="planet_class Coverage Results" MODIFIED="1755524289950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LittlePrince$menu_screen.coverage" NAME="menu_screen Coverage Results" MODIFIED="1755524958063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
