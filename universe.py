@@ -3,6 +3,7 @@ import sys
 from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
 from King_Planet import KingPlanet
 from Drinker_Planet import DrinkerPlanet
+from Lamp_Planet import LampPlanet
 
 def universe():
 
@@ -23,7 +24,8 @@ def universe():
 
     PLANET_SCREENS = {
         "King's Planet": KingPlanet,
-        "Drunkard's Planet": DrinkerPlanet
+        "Drunkard's Planet": DrinkerPlanet,
+        "Lamplighters's Planet": LampPlanet
     }
 
     # Little Prince (replace with image)

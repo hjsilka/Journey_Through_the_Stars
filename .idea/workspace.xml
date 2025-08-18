@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9561de7-ee98-4875-a38f-197fd0ae37f0" name="Changes" comment="drinker planet py">
+    <list default="true" id="b9561de7-ee98-4875-a38f-197fd0ae37f0" name="Changes" comment="change img size">
+      <change afterPath="$PROJECT_DIR$/Lamp_Planet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drinker_Planet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Drinker_Planet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu_screen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/universe.py" beforeDir="false" afterPath="$PROJECT_DIR$/universe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,8 +74,8 @@
       <recent name="$PROJECT_DIR$/planets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/fonts" />
       <recent name="$PROJECT_DIR$/media" />
+      <recent name="$PROJECT_DIR$/fonts" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -103,7 +102,7 @@
       <workItem from="1753907348705" duration="6629000" />
       <workItem from="1754746781191" duration="4720000" />
       <workItem from="1754766750282" duration="387000" />
-      <workItem from="1755510666957" duration="10111000" />
+      <workItem from="1755510666957" duration="15577000" />
     </task>
     <task id="LOCAL-00001" summary="menu screen background">
       <option name="closed" value="true" />
@@ -177,7 +176,31 @@
       <option name="project" value="LOCAL" />
       <updated>1755524400596</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="drinker planet class">
+      <option name="closed" value="true" />
+      <created>1755524989532</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1755524989532</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add music">
+      <option name="closed" value="true" />
+      <created>1755532155510</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1755532155510</updated>
+    </task>
+    <task id="LOCAL-00012" summary="change img size">
+      <option name="closed" value="true" />
+      <created>1755532269583</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1755532269583</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +226,10 @@
     <MESSAGE value="updated documentation" />
     <MESSAGE value="fix text king planet" />
     <MESSAGE value="drinker planet py" />
-    <option name="LAST_COMMIT_MESSAGE" value="drinker planet py" />
+    <MESSAGE value="drinker planet class" />
+    <MESSAGE value="add music" />
+    <MESSAGE value="change img size" />
+    <option name="LAST_COMMIT_MESSAGE" value="change img size" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LittlePrince$King_Planet.coverage" NAME="King_Planet Coverage Results" MODIFIED="1755520410554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -212,6 +238,6 @@
     <SUITE FILE_PATH="coverage/LittlePrince$button.coverage" NAME="button Coverage Results" MODIFIED="1753897830203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LittlePrince$title.coverage" NAME="title Coverage Results" MODIFIED="1753870770592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LittlePrince$planet_class.coverage" NAME="planet_class Coverage Results" MODIFIED="1755524289950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LittlePrince$menu_screen.coverage" NAME="menu_screen Coverage Results" MODIFIED="1755524958063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LittlePrince$menu_screen.coverage" NAME="menu_screen Coverage Results" MODIFIED="1755533697681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
