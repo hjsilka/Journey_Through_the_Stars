@@ -6,12 +6,12 @@ class DrinkerPlanet(PlanetScreen):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load('media/img_2384.png')
-        self.image = pygame.transform.scale(self.image, (250, 250))
+        self.image = pygame.transform.scale(self.image, (300, 300))
         self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
         self.description = (
             "The third planet I visited was inhabited by a drinker\n"
             "and plunged me into great melancholy.\n"
-            "The drinker was drinking to forget is what he told me.\n"
+            "The drinker was drinking to forget, is what he told me.\n"
             "He was drinking to forget that he was ashamed of drinking.\n"
         )
 # picture and text

@@ -6,7 +6,7 @@ class KingPlanet(PlanetScreen):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load('media/king.png')
-        self.image = pygame.transform.scale(self.image, (250, 250))
+        self.image = pygame.transform.scale(self.image, (300, 300))
         self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
         self.description = (
             "After leaving my planet, the first planet I visited on my journey\n"
@@ -22,7 +22,7 @@ class KingPlanet(PlanetScreen):
 # picture and text
     def draw(self):
         screen.fill(BLACK)
-        screen.blit(self.image, (100, SCREEN_HEIGHT // 2 - self.image.get_height()// 2))
+        screen.blit(self.image, (50, SCREEN_HEIGHT // 2 - self.image.get_height()// 2))
         self.draw_multiline_text(self.description, SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, line_height=25)
 # split into lines
     def draw_multiline_text(self, text, x, y, line_height=30):
