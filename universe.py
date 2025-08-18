@@ -1,12 +1,12 @@
 import pygame
 import sys
-from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
+from King_Planet import KingPlanet
 
 def universe():
 
     font = pygame.font.SysFont(None, 24)
 
-    clock = pygame.time.Clock()
 
     background = pygame.image.load('background/universe.png')
     background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -19,6 +19,10 @@ def universe():
         "Lamplighters's Planet": pygame.transform.scale(pygame.image.load("planets/planet_lamp.png"), (60, 60)),
         "Geographer's Planet": pygame.transform.scale(pygame.image.load("planets/planet_geo.png"), (60, 60)),
         "Home Planet": pygame.transform.scale(pygame.image.load("planets/planet_earth.png"), (60, 60))
+    }
+
+    PLANET_SCREENS = {
+        "King's Planet": KingPlanet
     }
 
     # Little Prince (replace with image)
@@ -72,7 +76,7 @@ def universe():
 
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN and selected_planet:
-                        return selected_planet
+                        return selected_planet[3]
 
             # Movement keys
             keys = pygame.key.get_pressed()
@@ -107,12 +111,12 @@ def universe():
             clock.tick(60)
 
 
-
     def main():
         while True:
             selected_planet = star_map()
-            if selected_planet:
-                pass
+            if selected_planet in PLANET_SCREENS:
+                planet = PLANET_SCREENS[selected_planet]()
+                planet.run()
 
     main()
 

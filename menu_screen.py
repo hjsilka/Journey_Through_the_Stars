@@ -2,13 +2,10 @@ import pygame
 import math
 import sys
 from button import Button
-from constants import screen, SCREEN_WIDTH
+from constants import screen, SCREEN_WIDTH, clock, FPS
 from universe import universe
 
 pygame.init()
-clock = pygame.time.Clock()
-FPS = 60
-
 font = pygame.font.Font('fonts/moonstar.ttf', 30)
 
 def main_menu():

@@ -1,11 +1,10 @@
 import pygame
 import sys
-from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
 
 class PlanetScreen:
     def __init__(self):
         self.running = False
-        self.font = pygame.font.Font("moonstar", 18)
 
     def run(self):
         self.running = True
@@ -28,11 +27,12 @@ class PlanetScreen:
     def draw(self):
         screen.fill(BLACK)
 
+# instructions
     def draw_back_instructions(self):
         back_text = self.font.render(
             "Press ESC to return to the star map", True, WHITE
         )
         screen.blit(
             back_text,
-            (SCREEN_WIDTH // 2 - back_text.get_width() // 2, SCREEN_HEIGHT // -30)
+            (SCREEN_WIDTH // 2 - back_text.get_width() // 2, SCREEN_HEIGHT -30)
         )
