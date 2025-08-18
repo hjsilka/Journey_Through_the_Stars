@@ -28,3 +28,4 @@ The planet text is half of the screen right now
 Picture of little prince instead of circle
 Background music
 Fix menu screen background
+Add instructions
