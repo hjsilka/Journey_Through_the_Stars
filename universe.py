@@ -1,5 +1,7 @@
 import pygame
 import sys
+
+from Business_Planet import BusinessPlanet
 from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
 from King_Planet import KingPlanet
 from Drinker_Planet import DrinkerPlanet
@@ -28,6 +30,7 @@ def universe():
         "Drunkard's Planet": DrinkerPlanet,
         "Lamplighters's Planet": LampPlanet,
         "Geographer's Planet": GeoPlanet,
+        "Businessman's Planet": BusinessPlanet,
     }
 
     # Little Prince (replace with image)
