@@ -7,16 +7,17 @@ class KingPlanet(PlanetScreen):
         super().__init__()
         self.image = pygame.image.load('media/king.png')
         self.image = pygame.transform.scale(self.image, (250, 250))
-        self.font = pygame.font.Font('fonts/typewriter.ttf', 20)
+        self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
         self.description = (
             "After leaving my planet, the first planet I visited on my journey\n"
-            "was inhabited by a king. This king was very proud to be king for someone.\n"
-            "When I yawned, he got angry, and when I told him I couldn't help but yawn,\n"
-            "he ordered me to yawn. When I asked him to sit down, he ordered me to sit down.\n"
-            "While the king claimed to have power and absolute authority, he was really all alone\n"
-            " with nothing to rule over. Later on earth, I learned that there are many rulers who\n"
-            "make a big deal about the power they have, but who, in actuality, are ineffective at\n"
-            "enforcing the power they claim to have."
+            "was inhabited by a king. This king was very proud to be king for\n"
+            "someone. When I yawned, he got angry, and when I told him I\n"
+            "couldn't help but yawn, he ordered me to yawn. When I asked him to\n"
+            "sit down, he ordered me to sit down. While the king claimed to have\n"
+            "power and absolute authority, he was really all alone with nothing to\n"
+            "rule over. Later on earth, I learned that there are many rulers who\n"
+            "make a big deal about the power they have, but who, in actuality,\n"
+            "are ineffective at enforcing the power they claim to have.\n"
         )
 # picture and text
     def draw(self):

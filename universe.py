@@ -7,7 +7,6 @@ def universe():
 
     font = pygame.font.SysFont(None, 24)
 
-
     background = pygame.image.load('background/universe.png')
     background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
