@@ -15,8 +15,8 @@ class BusinessPlanet(PlanetScreen):
             "and he did not seem very interested in making conversation with me,\n"
             "as he was too busy counting the stars. He explained to me that\n"
             "he owned to stars, not the king, as kings reign over things but\n"
-            "don't have them. Apparently, owning the stars made him rich, so\n"
-            "that if someone ever found new stars, he could buy them too.\n"
+            "don't have them. Apparently, owning the stars made him rich,\n"
+            "so that if someone ever found new stars, he could buy them too.\n"
             "His reasoning reminded me a little of the drunkard.\n"
         )
 # picture and text
