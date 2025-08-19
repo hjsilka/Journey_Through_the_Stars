@@ -9,7 +9,15 @@ class BusinessPlanet(PlanetScreen):
         self.image = pygame.transform.scale(self.image, (300, 300))
         self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
         self.description = (
-            "\n"
+            "The fourth planet I visited was inhabited by a businessman.\n"
+            "He didn't even have time to raise his head when I arrived;\n"
+            "that's how busy he was. All he did was mumble numbers,\n"
+            "and he did not seem very interested in making conversation with me,\n"
+            "as he was too busy counting the stars. He explained to me that\n"
+            "he owned to stars, not the king, as kings reign over things but\n"
+            "don't have them. Apparently, owning the stars made him rich, so\n"
+            "that if someone ever found new stars, he could buy them too.\n"
+            "His reasoning reminded me a little of the drunkard.\n"
         )
 # picture and text
     def draw(self):
