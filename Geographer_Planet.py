@@ -9,7 +9,15 @@ class GeoPlanet(PlanetScreen):
         self.image = pygame.transform.scale(self.image, (300, 300))
         self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
         self.description = (
-            "\n"
+            "The sixth planet I visited was home to a geographer. At first,\n"
+            "I was excited, thinking he might finally be a wise adult.\n"
+            "But he couldn’t even tell me if his own planet had seas, mountains,\n"
+            "or rivers - he never left his desk. He relied on explorers to bring\n"
+            "him knowledge, but there were none.\n"
+            "It was he who taught me the word ephemeral. For the first time,\n"
+            "I understood that my rose would not last forever, and I felt regret\n"
+            "for leaving her. Still, I gathered my courage and continued\n"
+            "on my journey to Earth.\n"
         )
 # picture and text
     def draw(self):
