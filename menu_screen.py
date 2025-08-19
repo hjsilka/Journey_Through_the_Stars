@@ -4,6 +4,7 @@ import sys
 from Classes.button import Button
 from constants import screen, SCREEN_WIDTH, clock, FPS
 from universe import universe
+from instructions import instructions
 
 pygame.init()
 pygame.mixer.init()
@@ -53,7 +54,7 @@ def main_menu():
                         pygame.quit()
                         sys.exit()
                     if INSTRUCTIONS_BUTTON.rect.collidepoint(event.pos):
-                        pass
+                        instructions()
 
             PLAY_BUTTON.update()
             QUIT_BUTTON.update()
