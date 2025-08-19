@@ -15,8 +15,9 @@ font = pygame.font.Font('media/fonts/moonstar.ttf', 30)
 
 def main_menu():
    # buttons
-    PLAY_BUTTON = Button(250, 200, 300, 80, "PLAY", font, screen)
-    QUIT_BUTTON = Button(250, 320, 300, 80, "QUIT", font, screen)
+    PLAY_BUTTON = Button(250, 150, 300, 80, "PLAY", font, screen)
+    QUIT_BUTTON = Button(250, 350, 300, 80, "QUIT", font, screen)
+    INSTRUCTIONS_BUTTON = Button(250, 250, 300, 80, "INSTRUCTIONS", font, screen)
 
     while True:
         #load image
@@ -51,9 +52,12 @@ def main_menu():
                     if QUIT_BUTTON.rect.collidepoint(event.pos):
                         pygame.quit()
                         sys.exit()
+                    if INSTRUCTIONS_BUTTON.rect.collidepoint(event.pos):
+                        pass
 
             PLAY_BUTTON.update()
             QUIT_BUTTON.update()
+            INSTRUCTIONS_BUTTON.update()
 
             pygame.display.update()
 
