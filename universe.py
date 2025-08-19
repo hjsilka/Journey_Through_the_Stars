@@ -2,7 +2,7 @@ import pygame
 import sys
 
 from Business_Planet import BusinessPlanet
-from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
+from constants import BLACK, WHITE, FPS, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
 from King_Planet import KingPlanet
 from Drinker_Planet import DrinkerPlanet
 from Lamp_Planet import LampPlanet
@@ -15,6 +15,8 @@ def universe():
 
     background = pygame.image.load('background/universe.png')
     background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
+    curser = pygame.image.load('media/little_prince.png')
+    curser = pygame.transform.scale(curser, (40, 40))
 
     planet_images = {
         "King's Planet": pygame.transform.scale(pygame.image.load("planets/planet_king.png"), (60, 60)),
@@ -35,7 +37,7 @@ def universe():
         "Home Planet": HomePlanet
     }
 
-    # Little Prince (replace with image)
+    # Little Prince
     prince_pos = pygame.Vector2(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
     PRINCE_RADIUS = 15
     prince_speed = 5
@@ -77,7 +79,8 @@ def universe():
             for planet in planets:
                 draw_planet(*planet)
 
-            pygame.draw.circle(screen, PRINCE_COLOR, (int(prince_pos.x), int(prince_pos.y)), PRINCE_RADIUS)
+            prince_rect = curser.get_rect(center=(int(prince_pos.x), int(prince_pos.y)))
+            screen.blit(curser, prince_rect)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

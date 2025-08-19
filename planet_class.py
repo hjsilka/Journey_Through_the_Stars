@@ -1,6 +1,6 @@
 import pygame
 import sys
-from constants import BLACK, WHITE, FPS, PRINCE_COLOR, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
+from constants import BLACK, WHITE, FPS, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
 
 class PlanetScreen:
     def __init__(self):
