@@ -1,6 +1,7 @@
 import pygame
 from Classes.planet_class import PlanetScreen
-from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT, FPS, clock
+from Classes.button import Button
 
 class HomePlanet(PlanetScreen):
     def __init__(self):
@@ -8,6 +9,7 @@ class HomePlanet(PlanetScreen):
         self.image = pygame.image.load('media/images/rose.png')
         self.image = pygame.transform.scale(self.image, (300, 300))
         self.font = pygame.font.Font('media/fonts/typewriter.ttf', 10)
+        self.mini_game_button = Button(500, 200, 200, 50, "mini-game", self.font, screen)
         self.description = (
             "This is my home planet. It is very small - so small that I can\n"
             "watch the sunset just by moving my chair a few steps.\n"
@@ -19,14 +21,41 @@ class HomePlanet(PlanetScreen):
             "the stars filled me with both curiosity and sadness, for I carried with\n"
             "me the love - and the worry - I felt for my rose.\n"
         )
-# picture and text
+
+    # image, button, description
     def draw(self):
         screen.fill(BLACK)
-        screen.blit(self.image, (50, SCREEN_HEIGHT // 2 - self.image.get_height()// 2))
+        screen.blit(self.image, (50, SCREEN_HEIGHT // 2 - self.image.get_height() // 2))
+
+        self.mini_game_button.update()
         self.draw_multiline_text(self.description, SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, line_height=25)
-# split into lines
+
+        super().draw_back_instructions() # esc instructions from base class
+
+    # split into lines
     def draw_multiline_text(self, text, x, y, line_height=30):
         lines = text.split('\n')
         for i, line in enumerate(lines):
             txt_surface = self.font.render(line, True, WHITE)
             screen.blit(txt_surface, (x, y + i * line_height))
+
+    # main loop
+    def run(self):
+        self.running = True
+        while self.running:
+            clock.tick(FPS)
+
+            self.handle_events() # handle esc and quit from base class
+
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if self.mini_game_button.rect.collidepoint(event.pos): # mini games button click
+                        self.start_mini_game()
+
+            self.draw()
+            pygame.display.update()
+
+
+    def start_mini_game(self):
+        pass
+
