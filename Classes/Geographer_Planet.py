@@ -1,13 +1,13 @@
 import pygame
-from planet_class import PlanetScreen
+from Classes.planet_class import PlanetScreen
 from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT
 
 class GeoPlanet(PlanetScreen):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('media/geographer.PNG')
+        self.image = pygame.image.load('media/images/geographer.PNG')
         self.image = pygame.transform.scale(self.image, (300, 300))
-        self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
+        self.font = pygame.font.Font('media/fonts/typewriter.ttf', 10)
         self.description = (
             "The sixth planet I visited was home to a geographer. At first,\n"
             "I was excited, thinking he might finally be a wise adult.\n"

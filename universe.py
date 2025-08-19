@@ -1,31 +1,31 @@
 import pygame
 import sys
 
-from Business_Planet import BusinessPlanet
-from constants import BLACK, WHITE, FPS, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
-from King_Planet import KingPlanet
-from Drinker_Planet import DrinkerPlanet
-from Lamp_Planet import LampPlanet
-from Geographer_Planet import GeoPlanet
-from Home_Planet import HomePlanet
+from Classes.Business_Planet import BusinessPlanet
+from constants import WHITE, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock
+from Classes.King_Planet import KingPlanet
+from Classes.Drinker_Planet import DrinkerPlanet
+from Classes.Lamp_Planet import LampPlanet
+from Classes.Geographer_Planet import GeoPlanet
+from Classes.Home_Planet import HomePlanet
 
 def universe():
 
     font = pygame.font.SysFont(None, 24)
 
-    background = pygame.image.load('background/universe.png')
+    background = pygame.image.load('media/background/universe.png')
     background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
-    curser = pygame.image.load('media/little_prince.png')
+    curser = pygame.image.load('media/images/little_prince.png')
     curser = pygame.transform.scale(curser, (40, 40))
 
     planet_images = {
-        "King's Planet": pygame.transform.scale(pygame.image.load("planets/planet_king.png"), (60, 60)),
-        "Conceited Man's Planet": pygame.transform.scale(pygame.image.load("planets/planet_sun.png"), (60, 60)),
-        "Drunkard's Planet": pygame.transform.scale(pygame.image.load("planets/planet_drunk.png"), (60, 60)),
-        "Businessman's Planet": pygame.transform.scale(pygame.image.load("planets/planet_business.png"), (60, 60)),
-        "Lamplighters's Planet": pygame.transform.scale(pygame.image.load("planets/planet_lamp.png"), (60, 60)),
-        "Geographer's Planet": pygame.transform.scale(pygame.image.load("planets/planet_geo.png"), (60, 60)),
-        "Home Planet": pygame.transform.scale(pygame.image.load("planets/planet_earth.png"), (60, 60))
+        "King's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_king.png"), (60, 60)),
+        "Conceited Man's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_sun.png"), (60, 60)),
+        "Drunkard's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_drunk.png"), (60, 60)),
+        "Businessman's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_business.png"), (60, 60)),
+        "Lamplighters's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_lamp.png"), (60, 60)),
+        "Geographer's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_geo.png"), (60, 60)),
+        "Home Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_earth.png"), (60, 60))
     }
 
     PLANET_SCREENS = {

@@ -1,13 +1,13 @@
 import pygame
-from planet_class import PlanetScreen
+from Classes.planet_class import PlanetScreen
 from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT
 
 class LampPlanet(PlanetScreen):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('media/lamplighter.png')
+        self.image = pygame.image.load('media/images/lamplighter.png')
         self.image = pygame.transform.scale(self.image, (300, 300))
-        self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
+        self.font = pygame.font.Font('media/fonts/typewriter.ttf', 10)
         self.description = (
             "The fifth planet I visited was the smallest of them all,\n"
             "and all it had was a lamppost and a lamplighter.\n"

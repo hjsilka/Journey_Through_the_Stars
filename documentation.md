@@ -29,3 +29,10 @@ Picture of little prince instead of circle
 Background music
 Fix menu screen background
 Add instructions
+
+August 19th:
+To do:
+Vain One Planet
+Fix menu screen background
+Add instructions
+Clean up files

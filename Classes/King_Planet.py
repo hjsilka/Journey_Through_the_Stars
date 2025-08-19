@@ -1,13 +1,13 @@
 import pygame
-from planet_class import PlanetScreen
+from Classes.planet_class import PlanetScreen
 from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT
 
 class KingPlanet(PlanetScreen):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('media/king.png')
+        self.image = pygame.image.load('media/images/king.png')
         self.image = pygame.transform.scale(self.image, (300, 300))
-        self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
+        self.font = pygame.font.Font('media/fonts/typewriter.ttf', 10)
         self.description = (
             "After leaving my planet, the first planet I visited on my journey\n"
             "was inhabited by a king. This king was very proud to be king for\n"

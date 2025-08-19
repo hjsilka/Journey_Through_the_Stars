@@ -1,17 +1,17 @@
 import pygame
 import math
 import sys
-from button import Button
+from Classes.button import Button
 from constants import screen, SCREEN_WIDTH, clock, FPS
 from universe import universe
 
 pygame.init()
 pygame.mixer.init()
 
-pygame.mixer.music.load('media/Hans Zimmer, Richard Harvey - Preparation.mp3')
+pygame.mixer.music.load('media/music/Hans Zimmer, Richard Harvey - Preparation.mp3')
 pygame.mixer.music.play(-1)
 
-font = pygame.font.Font('fonts/moonstar.ttf', 30)
+font = pygame.font.Font('media/fonts/moonstar.ttf', 30)
 
 def main_menu():
    # buttons
@@ -20,7 +20,7 @@ def main_menu():
 
     while True:
         #load image
-        bg =pygame.image.load('background/universe.png').convert()
+        bg =pygame.image.load('media/background/universe.png').convert()
         bg_width = bg.get_width()
         #  game variables
         scroll = 0

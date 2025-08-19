@@ -1,13 +1,13 @@
 import pygame
-from planet_class import PlanetScreen
+from Classes.planet_class import PlanetScreen
 from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT
 
 class BusinessPlanet(PlanetScreen):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('media/businessman.PNG')
+        self.image = pygame.image.load('media/images/businessman.PNG')
         self.image = pygame.transform.scale(self.image, (300, 300))
-        self.font = pygame.font.Font('fonts/typewriter.ttf', 10)
+        self.font = pygame.font.Font('media/fonts/typewriter.ttf', 10)
         self.description = (
             "The fourth planet I visited was inhabited by a businessman.\n"
             "He didn't even have time to raise his head when I arrived;\n"
