@@ -90,6 +90,8 @@ def universe():
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN and selected_planet:
                         return selected_planet[3]
+                    elif event.key == pygame.K_ESCAPE:
+                        return None # signal the user pressed esc
 
             # Movement keys
             keys = pygame.key.get_pressed()
@@ -127,6 +129,8 @@ def universe():
     def main():
         while True:
             selected_planet = star_map()
+            if selected_planet is None:
+                break # return to menu
             if selected_planet in PLANET_SCREENS:
                 planet = PLANET_SCREENS[selected_planet]()
                 planet.run()
