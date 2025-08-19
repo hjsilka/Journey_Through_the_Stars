@@ -2,8 +2,10 @@ import pygame
 
 from constants import WHITE, BLACK, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock, FPS
 
+
 def instructions():
-    font = pygame.font.Font("media/fonts/typewriter.ttf", 24)
+    font = pygame.font.Font("media/fonts/typewriter.ttf", 17)
+    image = pygame.image.load('media/images/arrow_keys.png')
 
     instructions_text = (
         "Follow the little prince as he tells you\n"
@@ -16,6 +18,7 @@ def instructions():
 
     # draw multi line text
     def draw_multiline_text(text, x, y, line_height=30):
+        screen.blit(image, (50, SCREEN_HEIGHT // 2 - image.get_height() // 2))
         lines = text.split('\n')
         for i, line in enumerate(lines):
             txt_surface = font.render(line, True, WHITE)
@@ -24,7 +27,7 @@ def instructions():
     # esc instructions at the bottom
     def draw_back_instructions():
         back_text = font.render(
-            "Press ESC to return to the menu", True, WHITE, 12
+            "Press ESC to return to the menu", True, WHITE
         )
     # position of the text
         screen.blit(
