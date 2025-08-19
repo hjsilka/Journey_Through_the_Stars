@@ -7,6 +7,7 @@ from King_Planet import KingPlanet
 from Drinker_Planet import DrinkerPlanet
 from Lamp_Planet import LampPlanet
 from Geographer_Planet import GeoPlanet
+from Home_Planet import HomePlanet
 
 def universe():
 
@@ -31,6 +32,7 @@ def universe():
         "Lamplighters's Planet": LampPlanet,
         "Geographer's Planet": GeoPlanet,
         "Businessman's Planet": BusinessPlanet,
+        "Home Planet": HomePlanet
     }
 
     # Little Prince (replace with image)
