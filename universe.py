@@ -8,6 +8,7 @@ from Classes.Drinker_Planet import DrinkerPlanet
 from Classes.Lamp_Planet import LampPlanet
 from Classes.Geographer_Planet import GeoPlanet
 from Classes.Home_Planet import HomePlanet
+from Classes.Vain_Planet import VainPlanet
 
 def universe():
 
@@ -20,7 +21,7 @@ def universe():
 
     planet_images = {
         "King's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_king.png"), (60, 60)),
-        "Conceited Man's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_sun.png"), (60, 60)),
+        "Vain One's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_sun.png"), (60, 60)),
         "Drunkard's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_drunk.png"), (60, 60)),
         "Businessman's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_business.png"), (60, 60)),
         "Lamplighters's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_lamp.png"), (60, 60)),
@@ -34,7 +35,8 @@ def universe():
         "Lamplighters's Planet": LampPlanet,
         "Geographer's Planet": GeoPlanet,
         "Businessman's Planet": BusinessPlanet,
-        "Home Planet": HomePlanet
+        "Home Planet": HomePlanet,
+        "Vain One's Planet": VainPlanet,
     }
 
     # Little Prince
@@ -50,6 +52,7 @@ def universe():
         (200, 450, 30, "Geographer's Planet"),
         (600, 450, 30, "Home Planet"),
         (300, 200, 30, "Drunkard's Planet"),
+        (630, 250, 30, "Vain One's Planet"),
     ]
 
     def draw_planet(x, y, radius, name):
