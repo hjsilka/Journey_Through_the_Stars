@@ -25,6 +25,9 @@ def instructions():
             txt_surface = font.render(line, True, WHITE)
             screen.blit(txt_surface, (x, y + i * line_height))
 
+        screen.blit(image, (SCREEN_WIDTH - image.get_width() - 50, SCREEN_HEIGHT // 2 - image.get_height()// 2))
+
+
     # esc instructions at the bottom
     def draw_back_instructions():
         back_text = font.render(
