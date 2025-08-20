@@ -6,6 +6,7 @@ from constants import WHITE, BLACK, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock, 
 def instructions():
     font = pygame.font.Font("media/fonts/typewriter.ttf", 17)
     image = pygame.image.load('media/images/arrow_keys.png')
+    image = pygame.transform.scale(image, (250, 250))
 
     instructions_text = (
         "Follow the little prince as he tells you\n"
