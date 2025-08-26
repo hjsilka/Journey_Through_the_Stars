@@ -22,8 +22,9 @@ def main_menu():
 
     while True:
         #load image
-        bg =pygame.image.load('media/background/universe.png').convert()
-        bg_width = bg.get_width()
+        bg1 = pygame.image.load('media/background/universe.png').convert()
+        bg2 = pygame.image.load('media/background/universe2.png').convert()
+        bg_width = bg1.get_width()
         #  game variables
         scroll = 0
         tiles = math.ceil(SCREEN_WIDTH / bg_width) + 1
@@ -34,8 +35,12 @@ def main_menu():
             clock.tick(FPS)
 
             # draw scrolling background
-            for i in range(0, tiles):
-                screen.blit(bg, (i * bg_width + scroll, 0))
+            for i in range(tiles):
+                if i % 2 == 0:
+                    screen.blit(bg1, (i * bg_width + scroll, 0))
+                else:
+                    screen.blit(bg2, (i * bg_width + scroll, 0))
+
             #scroll background
             scroll -= 3
             # reset scroll
