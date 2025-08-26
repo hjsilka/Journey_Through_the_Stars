@@ -36,3 +36,8 @@ Vain One Planet
 Fix menu screen background
 Add instructions
 Clean up files
+
+August 26th:
+To do:
+Mini game (whack a mole)
+menu screen background
