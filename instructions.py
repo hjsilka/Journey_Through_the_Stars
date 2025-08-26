@@ -19,7 +19,6 @@ def instructions():
 
     # draw multi line text
     def draw_multiline_text(text, x, y, line_height=30):
-        screen.blit(image, (50, SCREEN_HEIGHT // 2 - image.get_height() // 2))
         lines = text.split('\n')
         for i, line in enumerate(lines):
             txt_surface = font.render(line, True, WHITE)
