@@ -41,3 +41,9 @@ August 26th:
 To do:
 Mini game (whack a mole)
 menu screen background
+
+August 27th:
+To do:
+maybe: make prince not restart from lamplighter
+Mini game (whack a mole)
+menu screen background
