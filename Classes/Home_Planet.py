@@ -50,12 +50,14 @@ class HomePlanet(PlanetScreen):
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if self.mini_game_button.rect.collidepoint(event.pos): # mini games button click
+                        print("pressed")
                         self.start_mini_game()
 
             self.draw()
             pygame.display.update()
 
-
     def start_mini_game(self):
-        pass
+        from rose_mini_game import MiniGame
+        game = MiniGame()
+        game.run()
 
