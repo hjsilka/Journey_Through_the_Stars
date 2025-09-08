@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 from Classes.planet_class import PlanetScreen
 from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT, FPS, clock
@@ -45,12 +47,16 @@ class HomePlanet(PlanetScreen):
         while self.running:
             clock.tick(FPS)
 
-            self.handle_events() # handle esc and quit from base class
-
             for event in pygame.event.get():
-                if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        self.running = False
+                elif event.type == pygame.MOUSEBUTTONDOWN:
                     if self.mini_game_button.rect.collidepoint(event.pos): # mini games button click
-                        print("pressed")
+                        print("pressed minigame")
                         self.start_mini_game()
 
             self.draw()
@@ -58,6 +64,6 @@ class HomePlanet(PlanetScreen):
 
     def start_mini_game(self):
         from rose_mini_game import MiniGame
-        game = MiniGame()
-        game.run()
+        mini_game = MiniGame()
+        mini_game.run()
 
