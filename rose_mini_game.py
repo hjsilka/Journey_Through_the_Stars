@@ -1,15 +1,61 @@
 import sys
-
 import pygame
-from constants import screen, FPS, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT, clock
+import random
+import time
+from constants import screen, FPS, BLACK, WHITE, SCREEN_HEIGHT, clock
+
+# constants
+GRID_SIZE = 3
+CELL_SIZE = 100
+GRID_SPACING = 20
+BAOBAB_SIZE = 80
+HOLE_COLOR = (100, 100, 100)
+
+GAME_TIME = 30
+BAOBAB_TIME = 1.0
+
+# load and scale images
+baobab_image = pygame.image.load('media/images/baobab.png')
+baobab_image = pygame.transform.scale(baobab_image, (BAOBAB_SIZE, BAOBAB_SIZE))
+hammer_image = pygame.image.load('media/images/hammer.png')
+hammer_image = pygame.transform.scale(hammer_image, (50, 50))
 
 class MiniGame:
     def __init__(self):
         self.running = False
         self.font = pygame.font.Font('media/fonts/typewriter.ttf', 10)
 
+        self.score = 0 # number of sucessful hits
+        self.start_time = None
+        self.last_mole_time = 0
+        self.baobab_position = (random.randint(0, GRID_SIZE - 1), random.randint(0, GRID_SIZE - 1)) # random starting cell for baobab
+        self.baobab_visible = True # is baobab visible
+
+    def draw_grid(self): # draw grid of holes
+        for row in range(GRID_SIZE):
+            for col in range(GRID_SIZE):
+                x = col * (CELL_SIZE + GRID_SPACING)
+                y = row * (CELL_SIZE + GRID_SPACING)
+                pygame.draw.rect(screen, HOLE_COLOR, (x, y, CELL_SIZE, CELL_SIZE)) # draw rectangle (hole)
+
+    def draw_baobab(self): # draw baobab at given position
+        row, col = self.baobab_position
+        # center baobab inside the cell
+        x = col * (CELL_SIZE + GRID_SPACING) + (CELL_SIZE - BAOBAB_SIZE) // 2
+        y = row * (CELL_SIZE + GRID_SPACING) + (CELL_SIZE - BAOBAB_SIZE) // 2
+        screen.blit(baobab_image, (x, y))
+
+    def get_cell_from_mouse(self, pos): # converts mouse position to grid cell coordinates
+        x, y = pos # x and y coordinates of mouse position
+        col = x // (CELL_SIZE + GRID_SPACING)
+        row = y // (CELL_SIZE + GRID_SPACING)
+        return row, col
+
     def run(self):
         self.running = True
+        self.start_time = time.time() # start time
+        self.last_baobab_time = time.time() # last baobab spawn
+
         while self.running:
             clock.tick(FPS)
 
@@ -17,9 +63,46 @@ class MiniGame:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE: # esc to go back
                     self.running = False
+                if event.type == pygame.MOUSEBUTTONDOWN: # handle mouse click
+                    if self.baobab_visible:
+                        mouse_pos = pygame.mouse.get_pos() # get mouse coordinates
+                        clicked_cell = self.get_cell_from_mouse(mouse_pos) # convert to cell
+                        if clicked_cell == self.baobab_position:
+                            self.score += 1 # increase score
+                            self.mole_visible = False # baobab disappears after hit
+
+            # timer
+            current_time = time.time()
+            elapsed_time = current_time - self.start_time # time passed
+            remaining_time = GAME_TIME - elapsed_time # calculates remaining time
+            if remaining_time <= 0: # checks if the time is up
+                self.running = False  # game over
+                continue
+
+            # baobab 
+            if current_time - self.last_baobab_time > BAOBAB_TIME: # time to mvoe baobab
+                self.baobab_position = (random.randint(0, GRID_SIZE - 1), random.randint(0, GRID_SIZE - 1)) # new random position
+                self.last_baobab_time = current_time
+                self.mole_visible = True
 
             screen.fill(BLACK)
-            pygame.display.flip()
+            self.draw_grid()
+            if self.baobab_visible:
+                self.draw_baobab() # draw baobab if visible
 
+            # display remaining time
+            time_text = self.font.render(f"Time: {int(remaining_time)}s", True, WHITE)
+            screen.blit(time_text, (10, SCREEN_HEIGHT - 100))
+
+            # display score
+            score_text = self.font.render(f"Score: {self.score}", True, WHITE)
+            screen.blit(score_text, (10, SCREEN_HEIGHT - 50))
+
+            # hammer cursor
+            mouse_pos = pygame.mouse.get_pos()
+            hammer_rect = hammer_image.get_rect(center=mouse_pos)
+            screen.blit(hammer_image, hammer_rect.topleft)
+
+            pygame.display.flip()
