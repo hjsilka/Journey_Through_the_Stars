@@ -2,7 +2,7 @@ import sys
 import pygame
 import random
 import time
-from constants import screen, FPS, BLACK, WHITE, SCREEN_HEIGHT, clock
+from constants import screen, FPS, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT, clock
 
 # constants
 GRID_SIZE = 3
@@ -13,6 +13,14 @@ HOLE_COLOR = (100, 100, 100)
 
 GAME_TIME = 30
 BAOBAB_TIME = 1.0
+
+GRID_PIXEL_WIDTH = GRID_SIZE * CELL_SIZE + (GRID_SIZE - 1) * GRID_SPACING
+GRID_PIXEL_HEIGHT = GRID_SIZE * CELL_SIZE + (GRID_SIZE - 1) * GRID_SPACING
+
+GRID_OFFSET_X = (SCREEN_WIDTH - GRID_PIXEL_WIDTH) // 2
+GRID_OFFSET_Y = (SCREEN_HEIGHT - GRID_PIXEL_HEIGHT) // 2
+
+# intro text:
 
 # load and scale images
 baobab_image = pygame.image.load('media/images/baobab.png')
@@ -34,21 +42,27 @@ class MiniGame:
     def draw_grid(self): # draw grid of holes
         for row in range(GRID_SIZE):
             for col in range(GRID_SIZE):
-                x = col * (CELL_SIZE + GRID_SPACING)
-                y = row * (CELL_SIZE + GRID_SPACING)
+                x = GRID_OFFSET_X + col * (CELL_SIZE + GRID_SPACING)
+                y = GRID_OFFSET_Y + row * (CELL_SIZE + GRID_SPACING)
                 pygame.draw.rect(screen, HOLE_COLOR, (x, y, CELL_SIZE, CELL_SIZE)) # draw rectangle (hole)
 
     def draw_baobab(self): # draw baobab at given position
         row, col = self.baobab_position
         # center baobab inside the cell
-        x = col * (CELL_SIZE + GRID_SPACING) + (CELL_SIZE - BAOBAB_SIZE) // 2
-        y = row * (CELL_SIZE + GRID_SPACING) + (CELL_SIZE - BAOBAB_SIZE) // 2
+        x = GRID_OFFSET_X + col * (CELL_SIZE + GRID_SPACING) + (CELL_SIZE - BAOBAB_SIZE) // 2
+        y = GRID_OFFSET_Y + row * (CELL_SIZE + GRID_SPACING) + (CELL_SIZE - BAOBAB_SIZE) // 2
         screen.blit(baobab_image, (x, y))
 
     def get_cell_from_mouse(self, pos): # converts mouse position to grid cell coordinates
         x, y = pos # x and y coordinates of mouse position
+        x -= GRID_OFFSET_X
+        y -= GRID_OFFSET_Y
+        if x < 0 or y < 0:
+            return None
         col = x // (CELL_SIZE + GRID_SPACING)
         row = y // (CELL_SIZE + GRID_SPACING)
+        if row >= GRID_SIZE or col >= GRID_SIZE:
+            return None
         return row, col
 
     def run(self):
