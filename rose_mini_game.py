@@ -20,8 +20,6 @@ GRID_PIXEL_HEIGHT = GRID_SIZE * CELL_SIZE + (GRID_SIZE - 1) * GRID_SPACING
 GRID_OFFSET_X = (SCREEN_WIDTH - GRID_PIXEL_WIDTH) // 2
 GRID_OFFSET_Y = (SCREEN_HEIGHT - GRID_PIXEL_HEIGHT) // 2
 
-# intro text:
-
 # load and scale images
 baobab_image = pygame.image.load('media/images/baobab.png')
 baobab_image = pygame.transform.scale(baobab_image, (BAOBAB_SIZE, BAOBAB_SIZE))
@@ -35,9 +33,44 @@ class MiniGame:
 
         self.score = 0 # number of sucessful hits
         self.start_time = None
-        self.last_mole_time = 0
+        self.last_baobab_time = 0
         self.baobab_position = (random.randint(0, GRID_SIZE - 1), random.randint(0, GRID_SIZE - 1)) # random starting cell for baobab
         self.baobab_visible = True # is baobab visible
+
+    def start_screen(self):
+        intro_text = [
+            "Every morning the little prince cultivates his garden",
+            "by pulling up baobab seedlings,",
+            "as they could destroy his planet if they grow too big.",
+            "",
+            "Please help him and get rid of all baobab seedlings you see,",
+            "",
+            "Press ENTER to start"
+        ]
+
+        waiting = True # loop
+        while waiting:
+            clock.tick(FPS)
+            screen.fill(BLACK)
+
+            # center text
+            y_offset = SCREEN_HEIGHT // 4
+            for line in intro_text:
+                text_surface = self.font.render(line, True, WHITE)
+                text_rect = text_surface.get_rect(center=(SCREEN_WIDTH // 2, y_offset))
+                screen.blit(text_surface, text_rect)
+                y_offset += 30
+
+            pygame.display.flip()
+
+            for event in pygame.event.get(): # handle events
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+                    waiting = False
+
+
 
     def draw_grid(self): # draw grid of holes
         for row in range(GRID_SIZE):
@@ -66,6 +99,8 @@ class MiniGame:
         return row, col
 
     def run(self):
+        self.start_screen() # show intro before game starts
+
         self.running = True
         self.start_time = time.time() # start time
         self.last_baobab_time = time.time() # last baobab spawn
@@ -85,7 +120,7 @@ class MiniGame:
                         clicked_cell = self.get_cell_from_mouse(mouse_pos) # convert to cell
                         if clicked_cell == self.baobab_position:
                             self.score += 1 # increase score
-                            self.mole_visible = False # baobab disappears after hit
+                            self.baobab_visible = False # baobab disappears after hit
 
             # timer
             current_time = time.time()
@@ -95,11 +130,11 @@ class MiniGame:
                 self.running = False  # game over
                 continue
 
-            # baobab 
+            # baobab
             if current_time - self.last_baobab_time > BAOBAB_TIME: # time to mvoe baobab
                 self.baobab_position = (random.randint(0, GRID_SIZE - 1), random.randint(0, GRID_SIZE - 1)) # new random position
                 self.last_baobab_time = current_time
-                self.mole_visible = True
+                self.baobab_visible = True
 
             screen.fill(BLACK)
             self.draw_grid()
