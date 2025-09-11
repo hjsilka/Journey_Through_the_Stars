@@ -12,7 +12,7 @@ BAOBAB_SIZE = 80
 HOLE_COLOR = (100, 100, 100)
 
 GAME_TIME = 30
-BAOBAB_TIME = 1.0
+BAOBAB_TIME = 0.7
 
 GRID_PIXEL_WIDTH = GRID_SIZE * CELL_SIZE + (GRID_SIZE - 1) * GRID_SPACING
 GRID_PIXEL_HEIGHT = GRID_SIZE * CELL_SIZE + (GRID_SIZE - 1) * GRID_SPACING
@@ -27,11 +27,12 @@ hammer_image = pygame.image.load('media/images/hammer.png')
 hammer_image = pygame.transform.scale(hammer_image, (50, 50))
 
 class MiniGame:
-    def __init__(self):
+    def __init__(self, return_home=None):
         self.running = False
-        self.font = pygame.font.Font('media/fonts/typewriter.ttf', 10)
+        self.return_home = return_home
+        self.font = pygame.font.Font('media/fonts/typewriter.ttf', 20)
 
-        self.score = 0 # number of sucessful hits
+        self.score = 0 # number of successful hits
         self.start_time = None
         self.last_baobab_time = 0
         self.baobab_position = (random.randint(0, GRID_SIZE - 1), random.randint(0, GRID_SIZE - 1)) # random starting cell for baobab
@@ -70,6 +71,40 @@ class MiniGame:
                 if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
                     waiting = False
 
+    def end_screen(self):
+        end_text = [
+            f"Thank you for helping the little prince. You got rid of {self.score} baobabs",
+            "",
+            "Press ENTER to play again",
+            "Press ESC to go back"
+        ]
+
+        waiting = True  # loop
+        while waiting:
+            clock.tick(FPS)
+            screen.fill(BLACK)
+
+            # center text
+            y_offset = SCREEN_HEIGHT // 4
+            for line in end_text:
+                text_surface = self.font.render(line, True, WHITE)
+                text_rect = text_surface.get_rect(center=(SCREEN_WIDTH // 2, y_offset))
+                screen.blit(text_surface, text_rect)
+                y_offset += 30
+
+            pygame.display.flip()
+
+            for event in pygame.event.get(): # handle events
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN:
+                        waiting = False
+                        self.run()
+                    elif event.key == pygame.K_ESCAPE and self.return_home:
+                        waiting = False
+                        return self.return_home()
 
 
     def draw_grid(self): # draw grid of holes
@@ -112,8 +147,13 @@ class MiniGame:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE: # esc to go back
-                    self.running = False
+
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE: # esc to go back
+                        self.running = False
+                        if self.return_home:
+                            return self.return_home()
+
                 if event.type == pygame.MOUSEBUTTONDOWN: # handle mouse click
                     if self.baobab_visible:
                         mouse_pos = pygame.mouse.get_pos() # get mouse coordinates
@@ -131,7 +171,7 @@ class MiniGame:
                 continue
 
             # baobab
-            if current_time - self.last_baobab_time > BAOBAB_TIME: # time to mvoe baobab
+            if current_time - self.last_baobab_time > BAOBAB_TIME: # time to move baobab
                 self.baobab_position = (random.randint(0, GRID_SIZE - 1), random.randint(0, GRID_SIZE - 1)) # new random position
                 self.last_baobab_time = current_time
                 self.baobab_visible = True
@@ -155,3 +195,5 @@ class MiniGame:
             screen.blit(hammer_image, hammer_rect.topleft)
 
             pygame.display.flip()
+
+        self.end_screen()
