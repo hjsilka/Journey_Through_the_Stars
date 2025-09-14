@@ -2,6 +2,7 @@ import pygame
 
 from constants import WHITE, BLACK, screen, SCREEN_WIDTH, SCREEN_HEIGHT, clock, FPS
 
+# instruction for the game. pops up if the player clicks on the instructions button in the menu screen.
 
 def instructions():
     font = pygame.font.Font("media/fonts/typewriter.ttf", 17)

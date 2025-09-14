@@ -6,6 +6,9 @@ from constants import screen, SCREEN_WIDTH, clock, FPS
 from universe import universe
 from instructions import instructions
 
+# the first screen you see when you start the game
+# features a scrolling background of a universe and three different buttons
+
 pygame.init()
 pygame.mixer.init()
 

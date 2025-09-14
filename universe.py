@@ -10,15 +10,19 @@ from Classes.Geographer_Planet import GeoPlanet
 from Classes.Home_Planet import HomePlanet
 from Classes.Vain_Planet import VainPlanet
 
+# the universe screen
+# handles player movement, planet selection and navigates to planet screens
+
 def universe():
 
     font = pygame.font.SysFont(None, 24)
 
-    background = pygame.image.load('media/background/universe.png')
+    background = pygame.image.load('media/background/universe.png') # background image
     background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
-    curser = pygame.image.load('media/images/little_prince.png')
+    curser = pygame.image.load('media/images/little_prince.png') # curser image
     curser = pygame.transform.scale(curser, (40, 40))
 
+    # map planet names to their images and scale images
     planet_images = {
         "King's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_king.png"), (60, 60)),
         "Vain One's Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_sun.png"), (60, 60)),
@@ -29,6 +33,7 @@ def universe():
         "Home Planet": pygame.transform.scale(pygame.image.load("media/planets/planet_earth.png"), (60, 60))
     }
 
+    # map planet names to their screen classes
     PLANET_SCREENS = {
         "King's Planet": KingPlanet,
         "Drunkard's Planet": DrinkerPlanet,
@@ -44,7 +49,7 @@ def universe():
     PRINCE_RADIUS = 15
     prince_speed = 5
 
-    # Planets
+    # Planet coordinates
     planets = [
         (150, 150, 30, "King's Planet"),
         (650, 100, 30, "Businessman's Planet"),

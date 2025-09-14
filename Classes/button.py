@@ -6,6 +6,10 @@ BUTTON_HOVER = (100, 160, 210)
 TEXT_COLOR = "white"
 TEXT_HOVOR_COLOR = "black"
 
+# this is a reusable button class
+# each button can have different text
+# the button color changes when the mouse hovers over it
+
 class Button:
     def __init__(self, x, y, width, height, text_input, font, screen):
         self.rect = pygame.Rect(x, y, width, height)
@@ -24,6 +28,8 @@ class Button:
         # color based on hovering
         color = BUTTON_HOVER if hovering else BUTTON_COLOR
         self.text_color = TEXT_HOVOR_COLOR if hovering else TEXT_COLOR
+
+        # render button text
         self.text = self.font.render(self.text_input, True, self.text_color)
         self.text_rect = self.text.get_rect(center=self.rect.center)
 
