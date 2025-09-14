@@ -102,9 +102,9 @@ class MiniGame:
                     if event.key == pygame.K_RETURN:
                         waiting = False
                         self.run()
-                    elif event.key == pygame.K_ESCAPE and self.return_home:
+                    elif event.key == pygame.K_ESCAPE:
                         waiting = False
-                        return self.return_home()
+                        return
 
 
     def draw_grid(self): # draw grid of holes
