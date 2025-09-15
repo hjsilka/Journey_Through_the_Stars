@@ -15,6 +15,7 @@ class DrinkerPlanet(PlanetScreen):
             "He was drinking to forget that he was ashamed of drinking.\n"
         )
 # picture and text
+# line spacing & alignment calculation was refined with AI assistance
     def draw(self):
         screen.fill(BLACK)
         screen.blit(self.image, (100, SCREEN_HEIGHT // 2 - self.image.get_height()// 2))

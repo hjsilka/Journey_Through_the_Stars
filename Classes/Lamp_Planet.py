@@ -20,6 +20,7 @@ class LampPlanet(PlanetScreen):
             "he puts the star or flower to sleep.\n"
         )
 # picture and text
+# line spacing & alignment calculation was refined with AI assistance
     def draw(self):
         screen.fill(BLACK)
         screen.blit(self.image, (50, SCREEN_HEIGHT // 2 - self.image.get_height()// 2))

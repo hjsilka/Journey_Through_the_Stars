@@ -19,6 +19,7 @@ def instructions():
     )
 
     # draw multi line text
+    # line spacing & alignment calculation was refined with AI assistance
     def draw_multiline_text(text, x, y, line_height=30):
         lines = text.split('\n')
         for i, line in enumerate(lines):
