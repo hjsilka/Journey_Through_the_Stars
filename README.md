@@ -12,7 +12,7 @@ and the different people he met.
 
 ## How to Run
 
-To run the game, open menu_screen.py and execute it.
+To run the game, open menu_screen.py and execute it
 
 Install dependencies:
 
