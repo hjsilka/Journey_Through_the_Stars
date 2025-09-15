@@ -61,9 +61,9 @@ and easier to overcome challenges.
 # Challenges:
 During development, I faced several challenges:
 
--Figuring out how to use many different py files and classes together
--Struggling more than expected with the mini-game button, which I thought 
-    would be an easier part, since I already had my button class and 
+-Figuring out how to use many different py files and classes together\n
+-Struggling more than expected with the mini-game button, which I thought \n
+    would be an easier part, since I already had my button class and\n
     also made the main menu buttons.
 -In general, I think I was a little too optimistic when I said the game 
     should feature multiple mini-games and really underestimated how complex 
