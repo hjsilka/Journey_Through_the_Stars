@@ -61,30 +61,30 @@ and easier to overcome challenges.
 # Challenges:
 During development, I faced several challenges:
 
--Figuring out how to use many different py files and classes together\n
--Struggling more than expected with the mini-game button, which I thought \n
-    would be an easier part, since I already had my button class and\n
+- Figuring out how to use many different py files and classes together
+- Struggling more than expected with the mini-game button, which I thought 
+    would be an easier part, since I already had my button class and
     also made the main menu buttons.
--In general, I think I was a little too optimistic when I said the game 
+- In general, I think I was a little too optimistic when I said the game 
     should feature multiple mini-games and really underestimated how complex 
     the overall project actually turned out to be.
--The unexpected complexity of the game is also why the mini-game turned 
+- The unexpected complexity of the game is also why the mini-game turned 
     out fairly simple at the end
--I didn’t realize my project was missing .gitignore until weeks after starting, 
+- I didn’t realize my project was missing .gitignore until weeks after starting, 
     and accidentally committed unnecessary files. This taught me how important 
     it is to set up the project properly from the start.
 
 
 # Future improvements and limitations
--The game currently only includes one mini-game
--After visiting a planet, the prince currently 
+- The game currently only includes one mini-game
+- After visiting a planet, the prince currently 
     always returns to the Lamplighter’s planet
--At first, I didn't commit to GitHub often enough. 
+- At first, I didn't commit to GitHub often enough. 
     I improved on this later, but I know I can do even better.
--It would be great to expand the mini-game - highscore/win/lose system?
--The planets could be more interactive with 
+- It would be great to expand the mini-game - highscore/win/lose system?
+- The planets could be more interactive with 
     dialogue or other things.
--Even with the planet base class, there was still 
+- Even with the planet base class, there was still 
     some repeated code (like the draw_multiline_text method).
 
 
