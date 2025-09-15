@@ -95,6 +95,7 @@ Saint-Exupéry, A. d., & Woods, K. (1982). The little prince. Harcourt Brace Jov
 Song: Preparation by Hans Zimmer and Richard Harvey
 Typewriter font: https://www.dafont.com/jmh-typewriter.font
 Moonstar font: https://www.dafont.com/moon-star.font
+Menu background: https://opengameart.org/content/space-star-background
 
 
 
