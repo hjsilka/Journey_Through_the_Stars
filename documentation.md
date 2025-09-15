@@ -89,6 +89,12 @@ During development, I faced several challenges:
 
 
 
+I'm aware that my code isn't the cleanest and I think instead of focusing on the 
+complexity of my game I should've chosen a project better suited to my skill 
+level, that I could've executed more neatly. However, I'm still proud of what I learned
+in this class and of my final project, and I'm very happy that after many struggles
+everything runs as intended:)
+
 
 # References
 Saint-Exupéry, A. d., & Woods, K. (1982). The little prince. Harcourt Brace Jovanovich. 
