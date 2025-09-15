@@ -28,9 +28,9 @@ pygame-264c9f4cd512
 For the most part, I stuck with the initial idea. 
 I started with a menu screen that featured a start and quit button, as well as a dynamic scrolling background. To make the menu possible, I first built a Button class, which I was then able to reuse for the main menu and later also for the mini-game button. This was one of the first times I actually saw the benefit of writing code in a reusable way.
 
-Since I also knew I would be repeating a similar layout on the planet screens, I made a base Planet class that handled the main loop, event handling, drawing, and the ESC instructions. That meant the subclasses only had to focus on their unique parts like image and text.
+Since I also knew I would be repeating a similar layout on the planet screens, I made a base Planet class that handled the main loop, event handling, drawing, and the ESC instructions. That meant the subclasses only had to focus on their unique parts, like image and text.
 
-From there I built the universe with the different planets and tried to expand on what we learned in class. For example, I used collision detection and arrow key movement to handle player navigation in the universe. Thanks to the Planet base class, each planet is linked to its own subclass. 
+From there, I built the universe with the different planets and tried to expand on what we learned in class. For example, I used collision detection and arrow key movement to handle player navigation in the universe. Thanks to the Planet base class, each planet is linked to its own subclass. 
 
 When I had most of the planets ready with their text and picture, I had my parents playtest the game. I realized how important it is to have other people test your game as things that were obvious to me were confusing to them, like whether to use the arrow keys or the mouse. Based on their feedback, I added instructions to the main menu for clarity.
 
@@ -44,7 +44,7 @@ During development, I faced several challenges:
 -Struggling more than expected with the mini-game button, which I thought would be an easier part, since I already had my button class and also made the main menu buttons.
 -In general, I think I was a little too optimistic when I said the game should feature multiple mini games and really underestimated how complex the overall project actually turned out to be.
 -The unexpected complexity of the game is also why the mini-game turned out fairly simple at the end
--I didn’t realize my project was missing .gitignore until weeks after starting and accidentally committed unnecessary files. This taught me how important it is to set the project up properly from the start.
+-I didn’t realize my project was missing .gitignore until weeks after starting, and accidentally committed unnecessary files. This taught me how important it is to set the project up properly from the start.
 
 
 # Future improvements and limitations
