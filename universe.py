@@ -44,11 +44,6 @@ def universe():
         "Vain One's Planet": VainPlanet,
     }
 
-    # Little Prince
-    prince_pos = pygame.Vector2(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
-    PRINCE_RADIUS = 15
-    prince_speed = 5
-
     # Planet coordinates
     planets = [
         (150, 150, 30, "King's Planet"),
@@ -65,18 +60,18 @@ def universe():
         rect = image.get_rect(center=(x, y))
         screen.blit(image, rect)
         label = font.render(name, True, WHITE)
-        screen.blit(label, (x - label.get_width() / 2, y + radius + 40))
+        screen.blit(label, (x - label.get_width() / 2, y + radius + 40)) # calculation refined with AI assistance
 
     # check prince and planet collision
-    def prince_planet_collision(prince_pos, planet):
+    def prince_planet_collision(prince_pos, planet, prince_radius):
         px, py = prince_pos.x, prince_pos.y
         x, y, r, _ = planet
-        distance = ((px - x) ** 2 + (py - y) ** 2) ** 0.5
-        return distance <= PRINCE_RADIUS + r
+        distance = ((px - x) ** 2 + (py - y) ** 2) ** 0.5 # calculation refined with AI assistance
+        return distance <= prince_radius + r
 
     def star_map():
         prince_pos = pygame.Vector2(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
-        PRINCE_RADIUS = 15
+        prince_radius = 15
         prince_speed = 5
         running = True
         selected_planet = None
@@ -113,13 +108,13 @@ def universe():
                 prince_pos.y += prince_speed
 
             # Keep prince on screen
-            prince_pos.x = max(PRINCE_RADIUS, min(SCREEN_WIDTH - PRINCE_RADIUS, prince_pos.x))
-            prince_pos.y = max(PRINCE_RADIUS, min(SCREEN_HEIGHT - PRINCE_RADIUS, prince_pos.y))
+            prince_pos.x = max(prince_radius, min(SCREEN_WIDTH - prince_radius, prince_pos.x))
+            prince_pos.y = max(prince_radius, min(SCREEN_HEIGHT - prince_radius, prince_pos.y))
 
             # Check if Prince is on any planet
             selected_planet = None
             for planet in planets:
-                if prince_planet_collision(prince_pos, planet):
+                if prince_planet_collision(prince_pos, planet, prince_radius):
                     selected_planet = planet
                     # highlight the planet
                     pygame.draw.circle(screen, WHITE, (planet[0], planet[1]), planet[2] + 5, 3)
@@ -134,15 +129,12 @@ def universe():
             clock.tick(60)
 
 
-    def main():
-        while True:
-            selected_planet = star_map()
-            if selected_planet is None:
-                break # return to menu
-            if selected_planet in PLANET_SCREENS:
-                planet = PLANET_SCREENS[selected_planet]()
-                planet.run()
-
-    main()
+    while True:
+        selected_planet = star_map()
+        if selected_planet is None:
+            break
+        if selected_planet in PLANET_SCREENS:
+            planet = PLANET_SCREENS[selected_planet]()
+            planet.run()
 
 
