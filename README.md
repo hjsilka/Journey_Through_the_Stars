@@ -12,9 +12,11 @@ and the different people he met.
 
 ## How to Run
 
+To run the game, open menu_screen.py and execute it.
+
 Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 
-To run the game, open main_menu.py and execute it.
+

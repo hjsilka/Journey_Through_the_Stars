@@ -1,5 +1,4 @@
 import sys
-
 import pygame
 from Classes.planet_class import PlanetScreen
 from constants import screen, BLACK, WHITE, SCREEN_WIDTH, SCREEN_HEIGHT, FPS, clock
