@@ -16,3 +16,5 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+
+To run the game, open main_menu.py and execute it.
